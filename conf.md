@@ -15,6 +15,21 @@ python -m src.lerobot.async_inference.robot_client \
 
 
   ------------------
-
+lerobot-train \
+  --dataset.repo_id=ceva-automation-sg/smolVLA_cali \
+  --policy.type=act \
+  --output_dir=outputs/train/ceva-log-act \
+  --job_name=my_act_training \
+  --policy.device=cuda \
+  --policy.repo_id=\$HF_USER/my_act-policy-SL \
+  --wandb.enable=true \
 
   python -m src.lerobot.async_inference.policy_server --host=127.0.0.1 --port=8080
+
+
+  79a7863015151ad7c3ad9aff7c2d2479fbe4f137
+
+  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
+
+
+  
