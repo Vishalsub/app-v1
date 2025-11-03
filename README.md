@@ -14,6 +14,23 @@ This dashboard enables robot control, dataset recording, and AI model training â
 
 ---
 
+
+lerobot-record \
+  --robot.type=so101_follower \
+  --robot.port=/dev/tty.usbmodem5AB01834431 \
+  --robot.id=my_awesome_follower_arm_5 \
+  --teleop.type=so101_leader \
+  --teleop.port=/dev/tty.usbmodem5AB01824691 \
+  --teleop.id=my_awesome_leader_arm_5 \
+  --robot.cameras='{
+      "wrist":   { "type": "opencv", "index_or_path": 0, "width": 1920, "height": 1080, "fps": 30 },
+      "context": { "type": "opencv", "index_or_path": 1, "width": 1920, "height": 1080, "fps": 5 }
+  }' \
+  --dataset.repo_id=ceva-automation-sg/smolVLA_cali_2 \
+  --dataset.num_episodes=4 \
+  --dataset.single_task="Pick up the rectangular box and place it at vertical position" \
+  --display_data=true
+
 ## Installation
 
 ### macOS & Linux
